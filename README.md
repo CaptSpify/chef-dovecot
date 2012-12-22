@@ -1,6 +1,8 @@
 Description
 ===========
 
+This isn't actually working yet. It is close, but there are weird isues in weird places. 
+
 This cookbook is to install and configure dovecot. It will be using all of the default options. I will have the variables for other systems, but I will be focusing on Debian. This has NOT been tested on RedHat/CentOS/Suse/etc.
 I'd imagine Ubuntu would work, but use at your own risk.
 
