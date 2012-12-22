@@ -1,0 +1,39 @@
+#connect = host=<% @host %> dbname=<% @dbname %> user=<% @user %> password=<% @password %>
+
+# CREATE TABLE quota (
+#   username varchar(100) not null,
+#   bytes bigint not null default 0,
+#   messages integer not null default 0,
+#   primary key (username)
+# );
+
+map {
+  pattern = <% @pattern1 %>
+  table = <% @table1 %>
+  username_field = <% @fields_username %>
+  value_field = <% @value_field1 %>
+}
+map {
+  pattern = <% @pattern2 %>
+  table = <% @table1 %>
+  username_field = <% @fields_username %>
+  value_field = <% @value_field2 %>
+}
+
+# CREATE TABLE expires (
+#   username varchar(100) not null,
+#   mailbox varchar(255) not null,
+#   expire_stamp integer not null,
+#   primary key (username, mailbox)
+# );
+
+map {
+  pattern = <% @pattern2 %>
+  table = <% @table2 %>
+  value_field = <% @value_field3 %>
+
+  fields {
+    username = <% @fields_username %>
+    mailbox = <% @fields_mailbox %>
+  }
+}
